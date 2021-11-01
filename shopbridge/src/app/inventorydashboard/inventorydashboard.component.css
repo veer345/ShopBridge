@@ -3,6 +3,9 @@
     justify-content: flex-end;
     margin-right:5%;
 }
+.mat-table{
+  min-height:68vh;
+  }
 
 .table-container{
     box-sizing: border-box;
