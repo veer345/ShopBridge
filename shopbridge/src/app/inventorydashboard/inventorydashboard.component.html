@@ -1,0 +1,54 @@
+<div class="page-container">
+    <div class="col text-center">
+        <h1 class="center">Welcome to Inventory</h1>
+    </div>
+     
+    <div class=" btn-right mt-2">
+        <button type="button" (click)="onAdd()" class="btn btn-primary"> Add Item
+        </button>
+    </div>
+    <div class="example-container mat-elevation-z8">
+         
+        <mat-table [dataSource]="dataSource" matSort>
+          <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+          </ng-container>
+    
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.name}}</mat-cell>
+          </ng-container>
+      
+          <ng-container matColumnDef="description">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Description </mat-header-cell>
+            <mat-cell *matCellDef="let row">
+                <span class="fa-pointer" title="{{ row.description}}">{{ (row.description.length>30)? (row.description | slice:0:30)+'..':(row.description)}}</span> 
+            </mat-cell>
+          </ng-container>
+    
+          <ng-container matColumnDef="price">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Price </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.price}} </mat-cell>
+          </ng-container>
+    
+          <ng-container matColumnDef="mfd">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Manufacturing Date </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.mfd|date}} </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef> Action </th>
+            <td mat-cell *matCellDef="let row"> 
+              <a (click)="onEdit(row.id)" class="action-edit">Edit</a> | 
+              <a (click)="onDelete(row.id)" class="action-delete">Delete</a>  
+            </td>
+          </ng-container>
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;">
+          </mat-row>
+        </mat-table>
+      
+        <mat-paginator [pageSizeOptions]="[8, 10,15]"></mat-paginator>
+      </div>
+    
+    </div>

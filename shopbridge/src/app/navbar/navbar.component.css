@@ -1,0 +1,7 @@
+.bg-color{
+    background-color: indigo;
+}
+.right{
+    display: flex;
+    justify-self:flex-end;
+}

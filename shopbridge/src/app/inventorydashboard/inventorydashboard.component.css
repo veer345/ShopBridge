@@ -1,0 +1,42 @@
+.btn-right{
+    display: flex;
+    justify-content: flex-end;
+    margin-right:5%;
+}
+
+.table-container{
+    box-sizing: border-box;
+    border: solid grey 1px;
+    margin-top:1px ;
+    min-height: 70%;
+    max-width:100%;
+}
+* {
+    box-sizing: border-box;
+  }
+ 
+  .action-edit{
+    background-color: #07b44a;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .action-delete{
+    background-color: #f44336;
+    color: white;
+    padding: 5px 10px; 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  .action-delete:hover{
+    background-color: red;
+    cursor: pointer;
+  }
+  .action-edit:hover{
+    background-color: rgb(13, 204, 13);
+    cursor: pointer;
+  }
